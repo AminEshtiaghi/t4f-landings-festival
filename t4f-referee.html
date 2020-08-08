@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جشنواره های وب | تایم فور فان</title>
+    <link rel="stylesheet" href="vendor/css/grid.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/modals.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="https://www.t4f.ir/"> <img id="t4f" src="./images/t4f.svg" alt=""></a>
+    </header>
+    <div class="description__container">
+        <div class="description__container--title">
+            جشنواره داوری تایم فور فان
+        </div>
+        <div class="description__container--content">
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون
+            بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع
+            با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه
+            و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و
+            فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها،
+            و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل
+            دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+        </div>
+        <input type="text" id="search" placeholder="نام اتاق فرار، ژانر و ارائه دهنده مورد نظر را جستجو کنید...">
+    </div>
+    <div class="products__container">
+    </div>
+
+    <div class="modal micromodal-slide" id="full-choices" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="full-choices-title">
+                <main class="modal__content" id="full-choices-content">
+                    <p>
+                        شما همه انتخاب های خود را انجام داده اید. لطفاً برای انتخاب اتاق جدید، یکی از اتاق های قبلی خود
+                        را حذف کنید.
+                    </p>
+                </main>
+                <button class="modal__btn modal__btn-primary" data-micromodal-close>متوجه شدم!</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal micromodal-slide" id="success-modal" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="success-modal-title">
+                <main class="modal__content" id="success-modal-content">
+                    <p>
+                        انتخاب های شما با موفقیت ثبت شد.
+                    </p>
+                </main>
+                <a href="https://www.t4f.ir" class="modal__btn modal__btn-primary success__btn">بازگشت به سایت</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal micromodal-slide" id="still-modal" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="success-modal-title">
+                <main class="modal__content" id="still-modal-content">
+                    <p id="reminder-item">
+                        شما هنوز تمامی لیست خود را تکمیل نکرده اید.
+                    </p>
+                </main>
+                <a data-micromodal-close class="modal__btn modal__btn-primary choose-more">انتخاب اتاق های دیگر</a>
+                <button class="modal__btn modal__btn-primary" onclick="submitSmallForm()">ثبت لیست</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal micromodal-slide" id="zero-modal" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="success-modal-title">
+                <main class="modal__content" id="zero-modal-content">
+                    <p>
+                        انتخاب حداقل یک اتاق الزامی است.
+                    </p>
+                </main>
+                <a data-micromodal-close class="modal__btn modal__btn-primary">متوجه شدم!</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer__counter">
+            <span class="footer__counter--text">
+                شما
+            </span>
+            <span class="footer__counter--number">
+                5
+            </span>
+            <span class="footer__counter--text">
+                انتخاب دیگر دارید.
+            </span>
+        </div>
+        <div class="user__selections">
+            <div class="user__selection--empty">
+                <img src="./images/plus.svg" alt="">
+            </div>
+            <div class="user__selection--empty">
+                <img src="./images/plus.svg" alt="">
+            </div>
+            <div class="user__selection--empty">
+                <img src="./images/plus.svg" alt="">
+            </div>
+            <div class="user__selection--empty">
+                <img src="./images/plus.svg" alt="">
+            </div>
+            <div class="user__selection--empty">
+                <img src="./images/plus.svg" alt="">
+            </div>
+        </div>
+        <div class="footer__actions">
+            <button class="footer__actions--submit">ثبت لیست</button>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/@webcreate/infinite-ajax-scroll/dist/infinite-ajax-scroll.min.js"></script>
+    <script src="./js/loadContent.js"></script>
+    <script src="./js/micromodal.js"></script>
+    <script src="./js/modals.js"></script>
+</body>
+
+</html>
