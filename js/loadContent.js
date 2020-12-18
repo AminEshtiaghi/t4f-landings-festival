@@ -148,9 +148,11 @@ const submitSmallForm = () => {
         selectedItems.push(fromDetail[i].id)
     }
     axios
-        .post("https://run.mocky.io/v3/a395b025-2fc4-4f38-9947-15670b29a503", selectedItems)
+        .post("/festival/rooms/submit", {ids: selected})
         .then((res) => {
-            MicroModal.close('still-modal');
+            if (closeWindow)  {
+                MicroModal.close('still-modal');
+            }
             MicroModal.show('success-modal');
             document.querySelector('.footer__actions--submit').disabled = true
         })

@@ -119,6 +119,7 @@ header #t4f {
   height: 75px;
   width: 75px;
   margin-left: 25px;
+  cursor: pointer;
 }
 .user__selections .user__selections--item img {
   border-radius: 15px;
