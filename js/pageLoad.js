@@ -1,15 +1,20 @@
 const checkLogin = () => {
-  axios
-    .post("https://demo0719928.mockable.io/api/login", null)
-    .then((res) => {
-      if (res.status == 200) {
-        if (res.data.auth == true) {
-          window.location.href = "/t4f-referee.html";
-        } else {
-          window.location.href = "https://www.t4f.ir/login"
-        }
-      }
-    })
+    let current = window.location;
+
+    axios
+        .get("/auth/check", null)
+        .then((res) => {
+          if (res.status === 200) {
+            if (res.data.checked === true) {
+              window.location.href = "./main.html";
+            } else {
+              window.location.href = "/login?_back="+current;
+            }
+          }
+
+        }).catch((res) => {
+            window.location = "/login?_back="+current;
+        });
 };
 
-window.onload = checkLogin()
+window.onload = checkLogin();
