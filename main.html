@@ -87,7 +87,7 @@
         </div>
     </div>
 
-    <footer>
+    <footer id="footer">
         <div class="footer__counter">
             <span class="footer__counter--text">
                 شما
@@ -120,6 +120,9 @@
             <button class="footer__actions--submit" onclick="submitForm();">ثبت لیست</button>
         </div>
     </footer>
+    <div id="mobile--footer" class="footer__mobile" onclick="showList(this)" is-open=false>
+        مشاهده لیست
+    </div>
     <script src="https://unpkg.com/@webcreate/infinite-ajax-scroll/dist/infinite-ajax-scroll.min.js"></script>
     <script src="./js/loadContent.js"></script>
     <script src="./js/micromodal.js"></script>

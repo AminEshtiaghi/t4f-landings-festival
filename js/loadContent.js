@@ -46,7 +46,11 @@ const renderProduct = (array) => {
     let productContainer = document.querySelector('.products__container');
 
     axios
-        .get("/festival/rooms/items", {params: {ids: array}})
+        .get("/festival/rooms/items", {
+            params: {
+                ids: array
+            }
+        })
         .then((res) => {
             if (res.status === 200) {
 
@@ -147,9 +151,11 @@ const submitForm = () => {
 
 const submitSmallForm = (closeWindow = true) => {
     axios
-        .post("/festival/rooms/submit", {ids: selected})
+        .post("/festival/rooms/submit", {
+            ids: selected
+        })
         .then((res) => {
-            if (closeWindow)  {
+            if (closeWindow) {
                 MicroModal.close('still-modal');
             }
             MicroModal.show('success-modal');
@@ -165,7 +171,7 @@ const search = () => {
         let searchValue = searchInput.value;
         if (searchValue.length >= 3) {
             axios
-                .get("/festival/rooms/search?q="+searchValue, null)
+                .get("/festival/rooms/search?q=" + searchValue, null)
                 .then((res) => {
                     document.querySelector('.products__container').innerHTML = '';
                     renderProduct(res.data.items);
@@ -173,6 +179,23 @@ const search = () => {
         }
     })
 };
+
+const showList = (e) => {
+    if (e.getAttribute('is-open') == "false") {
+        e.setAttribute('is-open', true)
+        let footer = document.querySelector("#footer")
+        footer.style.display = "flex"
+        e.style.bottom = "110px"
+        e.innerHTML = 'بستن لیست'
+    }
+    else {
+        let footer = document.querySelector("#footer")
+        e.setAttribute('is-open', false)
+        footer.style.display = "none"
+        e.style.bottom = "0px"
+        e.innerHTML = 'مشاهده لیست'
+    }
+}
 
 
 window.onload = loadContent();
