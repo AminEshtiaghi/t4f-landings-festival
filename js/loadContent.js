@@ -58,7 +58,7 @@ const renderProduct = (array) => {
                     productContainer.innerHTML +=
                         `
                         <div class="products__container--item" id="${room.id}" onclick="vote(${room.id});" >
-                            <img src="${room.image}" alt="${room.name}" loading="lazy" >
+                            <img src="${room.image}?w=210&q=75" alt="${room.name}" loading="lazy" >
                             <p>${room.name}</p>
                         </div>
                         `;
@@ -115,7 +115,7 @@ function refreshTumbnails() {
 
         thumbnail.innerHTML += `
             <div class="user__selections--item" id="${selectedItem.id}" onclick="vote(${selectedItem.id});" >
-                <img src="${image.src}" width="75" height="75" alt="${selectedName.innerHTML}" loading="lazy" />
+                <img src="${image.src}?w=75&q=75" width="75" height="75" alt="${selectedName.innerHTML}" loading="lazy" />
             </div>
             `;
     }
