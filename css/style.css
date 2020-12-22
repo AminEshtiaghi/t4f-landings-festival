@@ -9,6 +9,7 @@
 * {
   font-family: "IRANSans", sans-serif;
   direction: rtl;
+  transition: all 300ms;
 }
 button {
   cursor: pointer;
@@ -219,12 +220,12 @@ footer .footer__actions .footer__actions--submit:disabled {
   }
   footer {
     display: none;
-    overflow-x: auto;
     justify-content: space-between;
-    height: 110px;
+    height: auto;
     padding: 15px;
     align-items: center;
     flex-direction: row-reverse;
+    flex-wrap: wrap;
   }
   footer .footer__counter {
     display: none;
@@ -247,13 +248,15 @@ footer .footer__actions .footer__actions--submit:disabled {
     justify-content: flex-start;
     align-items: center;
     text-align: center;
+    flex-wrap: wrap;
   }
   .user__selections .user__selections--item {
     text-align: center;
     height: 75px;
     width: 75px;
-    margin-left: 25px;
+    margin-left: 10px;
     cursor: pointer;
+    margin-bottom: 10px;
   }
   .user__selections .user__selections--item img {
     border-radius: 15px;
@@ -266,11 +269,18 @@ footer .footer__actions .footer__actions--submit:disabled {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 25px;
+    margin-left: 10px;
     cursor: pointer;
+    margin-bottom: 10px;
   }
   .user__selections .user__selection--empty img {
     width: 50px;
     height: 50px;
+  }
+  footer .footer__actions .footer__actions--submit {
+    width: 100%;
+  }
+  .footer__actions {
+    width: 100%;
   }
 }
