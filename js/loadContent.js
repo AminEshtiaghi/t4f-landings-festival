@@ -126,7 +126,33 @@ function refreshTumbnails() {
             </div>
             `;
     }
+    document.querySelector("#mobile--footer").innerHTML = `<span class="mobile-footer-icon"> + </span> ${5 - selected.length} انتخاب مانده`
 
+}
+
+const confirmModal = () => {
+    if (selected.length === 0) {
+        MicroModal.show('zero-modal');
+
+    } else if (selected.length < 5) {
+        let confirmModalList = document.querySelector("#still-selected-list")
+        let thumbnail = document.querySelector('.user__selections');
+        confirmModalList.innerHTML = thumbnail.innerHTML
+        document.querySelector("#reminder-item").innerHTML =
+            `
+            شما هنوز 
+            ${5 - (selected.length)}
+            انتخاب دیگر دارید.
+            `;
+        MicroModal.show('still-modal');
+
+    } else {
+        let confirmModalList = document.querySelector("#confirm-selected-list")
+        let thumbnail = document.querySelector('.user__selections');
+        confirmModalList.innerHTML = thumbnail.innerHTML
+        MicroModal.show("confirm-modal")
+
+    }
 }
 
 const submitForm = () => {
@@ -186,14 +212,14 @@ const showList = (e) => {
         let footer = document.querySelector("#footer")
         footer.style.display = "flex"
         e.style.bottom = "240px"
-        e.innerHTML = 'بستن لیست'
+        e.innerHTML = '<span class="mobile-footer-icon">- </span>بستن لیست'
     }
     else {
         let footer = document.querySelector("#footer")
         e.setAttribute('is-open', false)
         footer.style.display = "none"
         e.style.bottom = "0px"
-        e.innerHTML = 'مشاهده لیست'
+        e.innerHTML = `<span class="mobile-footer-icon"> + </span>${5 - selected.length} انتخاب مانده`
     }
 }
 

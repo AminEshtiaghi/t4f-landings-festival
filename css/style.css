@@ -42,6 +42,16 @@ header {
 header #t4f {
   height: 40px;
 }
+.page__loader {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .description__container {
   position: relative;
   background-color: #202020;
@@ -191,6 +201,34 @@ footer .footer__actions .footer__actions--submit:disabled {
 }
 .footer__mobile {
   display: none;
+}
+.confirm__modal--content {
+  font-size: 16px;
+  text-align: justify;
+  border-bottom: 1px solid #AF0404;
+  padding-bottom: 20px;
+  margin-top: 0;
+}
+.selected_list {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.selected_list .user__selections--item {
+  text-align: center;
+  height: 75px;
+  width: 75px;
+  margin-left: 25px;
+  cursor: pointer;
+}
+.selected_list .user__selections--item img {
+  border-radius: 15px;
+}
+.mobile-footer-icon {
+  font-size: 20px;
+  margin-left: 10px;
 }
 @media only screen and (max-width: 480px) {
   header {
