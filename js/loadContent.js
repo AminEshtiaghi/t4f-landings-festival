@@ -185,7 +185,7 @@ const showList = (e) => {
         e.setAttribute('is-open', true)
         let footer = document.querySelector("#footer")
         footer.style.display = "flex"
-        e.style.bottom = "110px"
+        e.style.bottom = "240px"
         e.innerHTML = 'بستن لیست'
     }
     else {
