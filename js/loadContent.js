@@ -224,5 +224,16 @@ const showList = (e) => {
 }
 
 
+const closeModalFunction = ()=>{
+    let buttons = document.querySelectorAll(".close-modal-button")
+    buttons.forEach(element => {
+        element.addEventListener("click", (e)=>{
+            e.preventDefault()
+            MicroModal.close(element.getAttribute("data-modal"))
+        })
+    });
+}
+
 window.onload = loadContent();
 window.onload = search();
+window.onload = closeModalFunction()

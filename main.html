@@ -39,7 +39,7 @@
     </div>
 
     <div class="modal micromodal-slide" id="full-choices" aria-hidden="true">
-        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal__overlay" data-micromodal-close>
             <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="full-choices-title">
                 <main class="modal__content" id="full-choices-content">
                     <p>
@@ -47,13 +47,13 @@
                         را حذف کنید.
                     </p>
                 </main>
-                <button class="modal__btn modal__btn-primary" data-micromodal-close>متوجه شدم!</button>
+                <button class="modal__btn modal__btn-primary close-modal-button" data-modal="full-choices">متوجه شدم!</button>
             </div>
         </div>
     </div>
 
     <div class="modal micromodal-slide" id="success-modal" aria-hidden="true">
-        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal__overlay" data-micromodal-close>
             <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="success-modal-title">
                 <main class="modal__content" id="success-modal-content">
                     <p>
@@ -66,7 +66,7 @@
     </div>
 
     <div class="modal micromodal-slide" id="still-modal" aria-hidden="true">
-        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal__overlay"  data-micromodal-close>
             <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="success-modal-title">
                 <main class="modal__content" id="still-modal-content">
                     <p id="reminder-item">
@@ -75,14 +75,14 @@
                 </main>
                 <p class="confirm__modal--content">لیست اتاق های انتخاب شده</p>
                 <div id="still-selected-list" class="selected_list"></div>
-                <a data-micromodal-close class="modal__btn modal__btn-primary choose-more">انتخاب اتاق های دیگر</a>
+                <a class="modal__btn modal__btn-primary choose-more close-modal-button" data-modal="still-modal">انتخاب اتاق های دیگر</a>
                 <button class="modal__btn modal__btn-primary" onclick="submitSmallForm()">تایید لیست</button>
             </div>
         </div>
     </div>
 
     <div class="modal micromodal-slide" id="zero-modal" aria-hidden="true">
-        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal__overlay"  data-micromodal-close>
             <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="success-modal-title">
                 <main class="modal__content" id="zero-modal-content">
                     <p>
@@ -90,17 +90,17 @@
                     </p>
                   
                 </main>
-                <a data-micromodal-close class="modal__btn modal__btn-primary">متوجه شدم!</a>
+                <a class="modal__btn modal__btn-primary close-modal-button" data-modal="zero-modal">متوجه شدم!</a>
             </div>
         </div>
     </div>
 
     <div class="modal micromodal-slide" id="confirm-modal" aria-hidden="true">
-        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal__overlay"  data-micromodal-close>
             <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="confirm-modal-title">
                     <p class="confirm__modal--content">لیست اتاق های انتخاب شده</p>
                 <div id="confirm-selected-list" class="selected_list"></div>
-                <a data-micromodal-close class="modal__btn modal__btn-primary choose-more">انتخاب اتاق های دیگر</a>
+                <a class="modal__btn modal__btn-primary choose-more close-modal-button" data-modal="confirm-modal">انتخاب اتاق های دیگر</a>
                 <button class="modal__btn modal__btn-primary" onclick="submitSmallForm()">تایید لیست</button>
             </div>
         </div>
