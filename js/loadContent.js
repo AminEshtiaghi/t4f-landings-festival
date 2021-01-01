@@ -135,9 +135,9 @@ const confirmModal = () => {
         MicroModal.show('zero-modal');
 
     } else if (selected.length < 5) {
-        let confirmModalList = document.querySelector("#still-selected-list")
+        let confirmModalList = document.querySelector("#still-selected-list");
         let thumbnail = document.querySelector('.user__selections');
-        confirmModalList.innerHTML = thumbnail.innerHTML
+        confirmModalList.innerHTML = thumbnail.innerHTML;
         document.querySelector("#reminder-item").innerHTML =
             `
             شما هنوز 
@@ -147,13 +147,13 @@ const confirmModal = () => {
         MicroModal.show('still-modal');
 
     } else {
-        let confirmModalList = document.querySelector("#confirm-selected-list")
+        let confirmModalList = document.querySelector("#confirm-selected-list");
         let thumbnail = document.querySelector('.user__selections');
-        confirmModalList.innerHTML = thumbnail.innerHTML
-        MicroModal.show("confirm-modal")
+        confirmModalList.innerHTML = thumbnail.innerHTML;
+        MicroModal.show("confirm-modal");
 
     }
-}
+};
 
 const submitForm = () => {
     if (selected.length === 0) {
@@ -184,6 +184,7 @@ const submitSmallForm = (closeWindow = true) => {
             if (closeWindow) {
                 MicroModal.close('still-modal');
             }
+            MicroModal.close('confirm-modal');
             MicroModal.show('success-modal');
             document.querySelector('.footer__actions--submit').disabled = true
         })
@@ -221,7 +222,7 @@ const showList = (e) => {
         e.style.bottom = "0px"
         e.innerHTML = `<span class="mobile-footer-icon"> + </span>${5 - selected.length} انتخاب مانده`
     }
-}
+};
 
 
 const closeModalFunction = ()=>{
@@ -232,8 +233,8 @@ const closeModalFunction = ()=>{
             MicroModal.close(element.getAttribute("data-modal"))
         })
     });
-}
+};
 
 window.onload = loadContent();
 window.onload = search();
-window.onload = closeModalFunction()
+window.onload = closeModalFunction();
