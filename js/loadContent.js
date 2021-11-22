@@ -1,6 +1,8 @@
 let selected = [];
 
 const loadContent = () => {
+    window.location = 'https://www.t4f.ir';
+    return;
     let current = window.location;
 
     axios
